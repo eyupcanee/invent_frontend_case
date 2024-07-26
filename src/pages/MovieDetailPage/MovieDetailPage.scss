@@ -1,0 +1,123 @@
+.loading {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+
+  .loadingText {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+
+    h1 {
+      color: var(--reflect-color);
+      font-size: 4rem;
+    }
+  }
+}
+
+.movieDetail {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+
+  .movieDetailContent {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+      display: flex;
+      align-items: center;
+      color: var(--reflect-color);
+      font-size: 2rem;
+      height: 200px;
+    }
+
+    .movieInfo {
+      display: grid;
+      grid-template-columns: 2fr 4fr;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 200px);
+
+      .poster {
+        img {
+          border: 1px solid var(--reflect-color);
+          padding: 10px;
+          width: 400px;
+          object-fit: cover;
+        }
+      }
+
+      .infos {
+        display: flex;
+        flex-direction: column;
+
+        .back {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          margin-top: 40px;
+
+          button {
+            padding: 10px 80px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            border: 1px solid var(--reflect-color);
+            background: transparent;
+          }
+        }
+
+        h2 {
+          color: var(--text-color);
+          margin-bottom: 20px;
+          span {
+            color: var(--reflect-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-right: 20px;
+          }
+        }
+
+        p {
+          color: var(--text-color);
+          font-size: 1.5rem;
+          span {
+            color: var(--reflect-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .movieDetail {
+    .header {
+      font-size: 1.5rem !important;
+    }
+
+    .movieDetailContent {
+      .movieInfo {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+
+      .poster {
+        img {
+          width: auto !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,254 @@
+.mainPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  height: auto;
+  background-color: var(--background-color);
+
+  .noMovie {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .pagination {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    font-weight: 600;
+    justify-content: space-between;
+
+    button {
+      background: transparent;
+      border: 1px solid var(--reflect-color);
+      color: var(--text-color);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all ease 0.5s;
+
+      &:disabled {
+        color: var(--background-color);
+        cursor: unset;
+      }
+    }
+
+    .current {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--reflect-color);
+      font-size: 1.5rem;
+      width: 100%;
+    }
+  }
+  .pageContent {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      color: var(--text-color);
+      font-size: 2rem;
+
+      span {
+        color: var(--reflect-color);
+      }
+    }
+
+    .movieGrid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+
+      .searchBar {
+        margin-top: 40px;
+        padding: 20px;
+        height: 100px;
+        width: 100%;
+        display: flex;
+
+        form {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          label {
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+          }
+
+          .searchInput {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            input {
+              width: 300px;
+              padding: 5px;
+              padding-left: 10px;
+              border: 1px solid var(--reflect-color);
+              background-color: transparent;
+              border-radius: 6px;
+              color: var(--text-color);
+              font-size: 1rem;
+              font-weight: 600;
+              outline: none;
+              transition: all ease 0.5s;
+
+              &:focus {
+                box-shadow: 0px 0px 10px 5px var(--reflect-color);
+              }
+            }
+          }
+
+          .searchButton {
+            display: flex;
+            input {
+              padding: 10px 80px;
+              background: transparent;
+              border: 1px solid var(--reflect-color);
+              color: var(--text-color);
+              font-weight: 600;
+              font-size: 1.2rem;
+              border-radius: 8px;
+              cursor: pointer;
+              transition: all ease 0.5s;
+
+              &:hover {
+                box-shadow: 0px 0px 10px 5px var(--reflect-color);
+                transform: scale(1.1);
+              }
+            }
+
+            div {
+              padding: 10px 20px;
+              background: transparent;
+              border: 1px solid var(--reflect-color);
+              color: var(--text-color);
+              font-weight: 600;
+              font-size: 1.2rem;
+              border-radius: 8px;
+              cursor: pointer;
+              transition: all ease 0.5s;
+              margin-right: 10px;
+              align-items: center;
+              text-align: center;
+
+              &:hover {
+                box-shadow: 0px 0px 10px 5px var(--reflect-color);
+                transform: scale(1.1);
+              }
+            }
+          }
+
+          .options {
+            display: flex;
+
+            .typeOptions {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              margin-left: 40px;
+            }
+
+            .yearOptions {
+              display: flex;
+              gap: 20px;
+              align-items: center;
+              justify-content: center;
+              margin-left: 40px;
+
+              input {
+                background: transparent;
+                color: var(--text-color);
+                border: 1px solid var(--reflect-color);
+                padding: 5px 10px;
+                font-weight: 600;
+                font-size: 1rem;
+                border-radius: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pagination {
+    button {
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+  }
+  .pageContent {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .movieGrid {
+    width: 100dw;
+    display: flex;
+    flex-direction: column;
+
+    .searchBar {
+      padding: 0 !important;
+      margin-bottom: 400px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .options {
+          display: flex;
+          flex-direction: column;
+
+          .searchInput {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .yearOptions {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 0 !important;
+          }
+
+          .typeOptions {
+            display: flex;
+            margin-left: 0 !important;
+            margin-top: 10px;
+          }
+        }
+        .searchButton {
+          align-items: center;
+          text-align: center;
+          display: flex;
+          flex-direction: column !important;
+          margin-top: 20px;
+
+          div {
+            margin-bottom: 20px;
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}

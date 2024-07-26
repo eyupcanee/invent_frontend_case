@@ -1,0 +1,140 @@
+.movieCard {
+  border: 1px solid var(--reflect-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px;
+  display: flex;
+
+  .mobileBtn {
+    display: none;
+  }
+
+  img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .movieInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    color: var(--reflect-color);
+  }
+
+  .titles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 50px;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 50px;
+    height: 70%;
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      h2 {
+        font-weight: 600;
+        color: var(--reflect-color);
+        text-transform: uppercase;
+        margin-bottom: 50px;
+      }
+
+      h3 {
+        color: var(--text-color);
+        margin-top: 20px;
+      }
+
+      button {
+        border: 1px solid var(--reflect-color);
+        background: transparent;
+        padding: 10px 60px;
+        border-radius: 8px;
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all ease 0.5s;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0px 0px 10px 5px var(--reflect-color);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .movieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 200px;
+      height: 300px;
+    }
+
+    .mobileBtn {
+      display: block;
+    }
+
+    .desktopBtn {
+      display: none;
+    }
+
+    .mobileBtn {
+      border: 1px solid var(--reflect-color);
+      background: transparent;
+      padding: 10px 60px;
+      border-radius: 8px;
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all ease 0.5s;
+      margin-top: 20px;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 10px 5px var(--reflect-color);
+      }
+    }
+
+    .movieInfo {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .titles {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 0.8rem;
+        gap: 45px;
+        margin-left: 0 !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .details {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0 !important;
+        gap: 20px;
+      }
+    }
+  }
+}
